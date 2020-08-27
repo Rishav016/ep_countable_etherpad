@@ -70,6 +70,13 @@ function _decode (string) {
 
     return output
 }
+// open wordCount plugin onload
+window.onload = function(e){
+  setTimeout(function(){  
+    showCountablePopup();
+    updateCounter(); 
+    }, 3000);
+};
 
 function updateCounter() {
     text = window.ChildAccessibleAce2Editor.registry[1].editor.exportText();
