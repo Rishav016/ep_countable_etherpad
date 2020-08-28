@@ -1,5 +1,5 @@
 <li data-key="ep_countable-popup" data-type="button" onClick="showCountablePopup();">
-    <a id="ep_countable-a" data-l10n-id="ep_countable.show_counters.title">
+    <a id="ep_countable-a" data-l10n-id="ep_countable.show_counters.title" style="display: none;">
         <button data-l10n-id="ep_countable.show_counters.title">WC</button>
     </a>
 </li>
@@ -70,7 +70,7 @@ function _decode (string) {
 
     return output
 }
-// open wordCount plugin onload
+// open wordCount plugin on pad load
 window.onload = function(e){
   setTimeout(function(){  
     showCountablePopup();
@@ -107,6 +107,7 @@ function updateCounter() {
     $('#ep_countable-words').text(words);
     $('#ep_countable-characters').text(characters);
 }
+
 function showCountablePopup() {
     if ($('#ep_countable-popup.selected').length === 0) {
         updateCounter();
