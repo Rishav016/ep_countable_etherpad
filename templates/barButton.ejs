@@ -109,9 +109,9 @@ function updateCounter() {
 }
 
 function showCountablePopup() {
-    if ($('#ep_countable-popup.selected').length === 0) {
-        updateCounter();
-    }
+    // if ($('#ep_countable-popup.selected').length === 0) {
+    //     // updateCounter();
+    // }
     $('#ep_countable-popup').toggleClass('selected');
     $('#ep_countable-a').toggleClass('selected');
     var i = $('#ep_countable-popup').css('width');
