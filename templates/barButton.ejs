@@ -74,7 +74,7 @@ function _decode (string) {
 window.onload = function(e){
   setTimeout(function(){  
     showCountablePopup();
-    updateCounter(); 
+    //updateCounter(); 
     }, 3000);
 };
 
@@ -96,16 +96,16 @@ function updateCounter() {
      *
      * @see <http://goo.gl/SWOLB>
      */
-    var paragraphs = trimmed ? (trimmed.match(/\n+/g) || []).length + 1 : 0;
-    var sentences  = trimmed ? (trimmed.match(/[.?!…]+.?/g) || []).length : 0;
+    //var paragraphs = trimmed ? (trimmed.match(/\n+/g) || []).length + 1 : 0;
+    //var sentences  = trimmed ? (trimmed.match(/[.?!…]+.?/g) || []).length : 0;
     var words      = trimmed ? (trimmed.replace(/['";:,.?¿\-!¡]+/g, '').match(/\S+/g) || []).length : 0;
-    var characters = trimmed ? _decode(trimmed).length : 0;
-    var all        = _decode(text).length;
+    //var characters = trimmed ? _decode(trimmed).length : 0;
+    //var all        = _decode(text).length;
 
-    $('#ep_countable-paragraphs').text(paragraphs);
-    $('#ep_countable-sentences').text(sentences);
+    //$('#ep_countable-paragraphs').text(paragraphs);
+    //$('#ep_countable-sentences').text(sentences);
     $('#ep_countable-words').text(words);
-    $('#ep_countable-characters').text(characters);
+    //$('#ep_countable-characters').text(characters);
 }
 
 function showCountablePopup() {
@@ -116,5 +116,6 @@ function showCountablePopup() {
     $('#ep_countable-a').toggleClass('selected');
     var i = $('#ep_countable-popup').css('width');
     $('#ep_countable-popup').css('margin-right', "calc(20% - "+i+")");
+    updateCounter();
 }
 </script>
