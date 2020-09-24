@@ -72,15 +72,7 @@ function _decode (string) {
 }
 // open wordCount plugin on pad load
 window.onload = function(e){
-  setTimeout(function(){ 
-    // set editbar color from setting.json
-    if(clientVars.padOptions.editBarColor){
-        $('#editbar').css('background', clientVars.padOptions.editBarColor);
-    }
-    //remove plugin icons when pad is readonly
-    if(clientVars.readonly) {
-        $('.menu_left').css('visibility', 'hidden'); 
-    }
+  setTimeout(function(){
     showCountablePopup();
     //updateCounter(); 
     }, 3000);
@@ -120,6 +112,16 @@ function showCountablePopup() {
     // if ($('#ep_countable-popup.selected').length === 0) {
     //     // updateCounter();
     // }
+    if(clientVars) {
+    // set editbar color from setting.json
+        if(clientVars.padOptions.editBarColor){
+            $('#editbar').css('background', clientVars.padOptions.editBarColor);
+        }
+        //remove plugin icons when pad is readonly
+        if(clientVars.readonly) {
+            $('.menu_left').css('visibility', 'hidden'); 
+        }
+    }
     $('#ep_countable-popup').toggleClass('selected');
     $('#ep_countable-a').toggleClass('selected');
     var i = $('#ep_countable-popup').css('width');
