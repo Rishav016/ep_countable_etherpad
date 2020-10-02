@@ -115,8 +115,10 @@ function showCountablePopup() {
     if(clientVars != undefined) {
         console.log(clientVars);
     // set editbar color from setting.json
-        if(clientVars.padOptions.editBarColor != undefined){
-            $('#editbar').css('background', clientVars.padOptions.editBarColor);
+        if(clientVars.padOptions != undefined) {
+            if(clientVars.padOptions.editBarColor != undefined){
+                $('#editbar').css('background', clientVars.padOptions.editBarColor);
+            }
         }
         //remove plugin icons when pad is readonly
         if(clientVars.readonly) {
