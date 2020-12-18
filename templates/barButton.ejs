@@ -106,6 +106,9 @@ function updateCounter() {
     //$('#ep_countable-sentences').text(sentences);
     $('#ep_countable-words').text(words);
     //$('#ep_countable-characters').text(characters);
+	
+	// alert message if cross max limit
+    alertMessage(words);
 }
 
 function showCountablePopup() {
@@ -130,5 +133,15 @@ function showCountablePopup() {
     var i = $('#ep_countable-popup').css('width');
     $('#ep_countable-popup').css('margin-right', "calc(20% - "+i+")");
     updateCounter();
+}
+function alertMessage(words) {
+    var maxLimit = (clientVars.maxWords != 'undefined') ? parseInt(clientVars.maxWords) : 0;
+    var msg = '<p style="color:red;">You have crossed maximum word limit</p>';
+    if((maxLimit > 0) && (words > maxLimit)) {
+        $('#ep_countable-words-msg').html(msg);
+    }
+    else {
+        $('#ep_countable-words-msg').html('');
+    }
 }
 </script>
